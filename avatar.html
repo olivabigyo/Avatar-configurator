@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Avatar Configurator</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- Bootstrap cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
+    <!-- My Stylesheet -->
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/svg-style.css">
+</head>
+
+<body class="whitesand">
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-theme bg-theme sticky-top">
+        <div class="container">
+            <a href="" class="navbar-brand">Student Newsportal</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-toggler">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Our School </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="" class="nav-link">
+                            <i class="fas fa-cog"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item"><a href="" class="nav-link">
+                            <i class="fas fa-user-cog"></i> My Profile</a>
+                    </li>
+                    <li class="nav-item"><a href="" class="nav-link">
+                            <i class="fas fa-user-times card-label-theme"></i> Logout</a>
+                    </li>
+                    <!-- darklight toggler -->
+                    <li class="nav-item">
+                        <div class="custom-control custom-switch nav-link ml-5">
+                            <input type="checkbox" class="custom-control-input" id="themeSwitch">
+                            <label class="custom-control-label" for="themeSwitch"><i class="fas fa-moon i-theme"></i></label>
+                        </div>
+                    </li>
+                    <!-- I put it here to avoid the flashing -->
+                    <script src="js/theme-toggler.js"></script>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-decoration"></div>
+    <!-- END NAVIGATION -->
+
+    <!-- HEADER -->
+    <!-- Dashboard -->
+    <header class="bg-theme py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><i class="fas fa-paint-brush"></i> Avatar Settings</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Dashboard -->
+    <!-- HEADER END -->
+
+    <!-- MAIN AREA -->
+    <section class="container py-2 my-4">
+        <div class="row">
+            <!-- Left Side Area Start -->
+            <div class="col-lg-3">
+                <div class="card mb-3">
+                    <div id="svg-target" class="card-body">
+                        <!-- here comes the big svg girl-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left Side Area End -->
+            <!-- Right Side Area Start -->
+            <div class="col-lg-9">
+                <div class="card card-theme">
+                    <div class="card-header card-header-theme">
+                        <h2>Avatar Configurator</h2>
+                    </div>
+                    <div class="card-body card-label-theme">
+                        <form class="" action="" method="post">
+                        <div class="form-group">
+                                <label for="gender"><span>Gender: </span></label>
+                                <select class="form-control" id="gender" name="Gender">
+                                    <option>Girl</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="girl-select"><span>Preset: </span></label>
+                                <select class="form-control" id="girl-select" name="Skin">
+                                    <option>Custom</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="skin-tone-select"><span>Skin tone: </span></label>
+                                    <select class="form-control" id="skin-tone-select" name="Skin">
+                                        <option>- select skin tone -</option>
+                                        <option>light</option>
+                                        <option value="mid">middle</option>
+                                        <option>dark</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col">
+                                    <label for="mouth-select"><span>Smile style: </span></label>
+                                    <select class="form-control" id="mouth-select" name="Lips">
+                                        <option>- select smile -</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="hair-select"><span>Hair style: </span></label>
+                                    <select class="form-control" id="hair-select" name="Hair">
+                                        <option>- select hair -</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col">
+                                    <label for="hair-color-select"><span>Hair color: </span></label>
+                                    <select class="form-control" id="hair-color-select" name="Hair-color">
+                                        <option>- select color -</option>
+                                        <option value="blonde">Blonde</option>
+                                        <option value="ginger">Ginger</option>
+                                        <option value="lightbrown">Light Brown</option>
+                                        <option value="brown">Brown</option>
+                                        <option value="darkbrown">Dark Brown</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="dress-select"><span>Dress: </span></label>
+                                    <select class="form-control" id="dress-select" name="Dress">
+                                        <option>- select dress -</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col">
+                                    <label for="dress-color-select"><span>Dress color: </span></label>
+                                    <select class="form-control" id="dress-color-select" name="Dress-color">
+                                        <option>- select color -</option>
+                                        <option>blue</option>
+                                        <option>green</option>
+                                        <option value="lightpink">light pink</option>
+                                        <option>pink</option>
+                                        <option>yellow</option>
+                                        <option>brown</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="accessories"><span>Accessories: </span></label>
+                                <select class="form-control" id="accessories-select" name="Accessories">
+                                    <option value="none">none</option>
+                                    <option>Glasses</option>
+                                    <option>Pearls</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6 mb-2">
+                                <a href="" class="btn btn-warning btn-block"><i class="fas fa-arrow-left"></i> Back To Settings</a>
+                                </div>
+                                <div class="col-lg-6 mb-2">
+                                <button type="submit" name="Submit" class="btn btn-success btn-block">
+                                    <i class="fas fa-check"></i> Publish
+                                </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Card Body End -->
+                </div>
+            </div>
+            <!-- Right Side Area End -->
+        </div>
+    </section>
+    <!-- END MAIN AREA -->
+
+    <!-- FOOTER -->
+    <footer class="bg-theme pt-2 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="lead text-center text-inverse-50">Created By | Olivabigyo | &copy; <span id="year"></span> --- Some right reserved.</p>
+                    <p class="small text-center"><a rel="noopener noreferrer" class="text-inverse" href="https://sae.edu" target="_blank">
+                            This site is my CMS Student Project for Webdesign & Development Diploma at SAE Zürich.
+                        </a></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-decoration"></div>
+    </footer>
+    <!-- FOOTER END -->
+
+    <!-- SCRIPTS -->
+
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <!-- popper cdn-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js" integrity="sha512-53CQcu9ciJDlqhK7UD8dZZ+TF2PFGZrOngEYM/8qucuQba+a+BXOIRsp9PoMNJI3ZeLMVNIxIfZLbG/CdHI5PA==" crossorigin="anonymous"></script> -->
+    <!-- Bootstrap js plugins cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script>
+    <!-- myScript -->
+    <script>
+        // updates the year in the footer after the copyright
+        $('#year').text(new Date().getFullYear());
+    </script>
+    <script src="js/avatar.js"></script>
+</body>
+
+</html>
