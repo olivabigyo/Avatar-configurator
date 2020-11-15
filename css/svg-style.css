@@ -1,0 +1,189 @@
+/* ***************************************************************
+/* Parts selection/display handling */
+
+.sel {
+    display: none;
+}
+
+.sel.active {
+    display: initial;
+}
+
+.not-yet {
+    display: none;
+}
+
+
+/* *****************************************************
+
+/***
+ * SVG style
+ * This belongs inside the girl SVG and was only moved here for ease of handling.
+ * (VS Code doesn't properly recognize style tags within the SVGs and don't switch to CSS mode in them.)
+ */
+
+/* Skin */
+
+.skin-tone {
+    fill: #ffdecc;
+    /* normal light tone */
+    /* everybody */
+}
+
+.skin-shadow {
+    fill: #f7c5aa;
+}
+
+g[data-skin='dark'] .skin-tone {
+    fill: #e6a875;
+    /* dark tone */
+    /* girl 2 */
+}
+
+g[data-skin='dark'] .skin-shadow {
+    fill: #b88053;
+}
+
+g[data-skin='mid'] .skin-tone {
+    fill: #f0b98b;
+    /* middle tone */
+    /* girl 12 */
+}
+
+g[data-skin='mid'] .skin-shadow {
+    fill: #cc9568;
+}
+
+/* Hair Colors */
+
+.hair-color {
+    fill: #a2400f;
+    /* brown */
+}
+
+g[data-hair='darkbrown'] .hair-color {
+    fill: #4d1b02;
+    /* black/dark brown */
+}
+
+g[data-hair='ginger'] .hair-color {
+    fill: #ff690f;
+    /* red/orange */
+}
+
+g[data-hair='lightbrown'] .hair-color {
+    fill: #cc7c54;
+    /* light brown */
+}
+
+g[data-hair='blonde'] .hair-color {
+    fill: #ffc65d;
+    /* blonde */
+}
+
+/* Lips */
+
+.lip-color {
+    fill: #ff386a;
+    /* pink */
+}
+
+.lip-shadow {
+    fill: #c9204a;
+}
+
+.teeth {
+    fill: #fff;
+}
+
+/* Dress colors */
+
+.dress-color {
+    /* Green. Default. Originally girls: 1, 5, 7, 8 */
+    fill: #68c497;
+}
+
+g[data-dress='blue'] .dress-color {
+    /* Blue. Originally girl: 3 */
+    fill: #86bceb;
+}
+
+g[data-dress='pink'] .dress-color {
+    /* Pink. Originally girls: 4, 6, 12 */
+    fill: #ff386a;
+    /* it is lip-color-1 */
+}
+
+g[data-dress='lightpink'] .dress-color {
+    /* Lighter pink. Originally girl: 9 */
+    fill: #ffa8be;
+}
+
+g[data-dress='brown'] .dress-color {
+    /* Dark brown. Originally girl: 10 */
+    fill: #4d1b02;
+    /* same as dark-brow-hair */
+}
+
+g[data-dress='yellow'] .dress-color {
+    /* Yellow. Originally girl: 11 */
+    fill: #ffd16e;
+}
+
+g[data-dress='yellow'] .dress-shadow {
+    /* fill: #b5903f; */
+    fill: #b34d1f;
+    /* still not good enough */
+}
+
+g[data-dress='lightpink'] .dress-shadow {
+    fill: #ff386a;
+    /* lip/dress pink */
+}
+
+g[data-dress='pink'] .dress-shadow{
+    fill: #c21842;
+    /* dark pink */
+}
+
+g[data-dress='green'] .dress-shadow {
+    fill: #3c8a64;
+    /* dark green */
+}
+
+/* TODO: .dress-light szin minden szinhez */
+g[data-dress='green'] .dress-deko {
+    fill: #9ce8c3;
+    /* light green */
+}
+
+.dress-deko-5 {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 22.93;
+    stroke-width: 1.2px;
+    stroke-dasharray: 2.4 3.6;
+}
+
+.polkadots {
+    fill: #fff;
+}
+
+.dress-deko-12 {
+    fill: #fff;
+}
+
+/* Accessoires */
+
+.glasses-color {
+    fill: #ff690f;
+}
+
+/* TODO: fitting to the dress-color? */
+.jewelry-hair {
+    fill: #86bceb;
+}
+
+.pearls {
+    fill: #fff;
+}
