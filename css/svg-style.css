@@ -1,11 +1,11 @@
 /* ***************************************************************
 /* Parts selection/display handling */
 
-.sel {
+.selectable {
     display: none;
 }
 
-.sel.active {
+.selectable.active {
     display: initial;
 }
 

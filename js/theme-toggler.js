@@ -6,7 +6,7 @@ const body = document.querySelector('body');
 // Function variables
 
 const setTheme = (dark, notrans) => {
-    console.log('theme', dark);
+    // console.log('theme', dark);
     if (dark) {
         if (!notrans) trans();
         // document.documentElement.setAttribute('data-theme', 'dark');
