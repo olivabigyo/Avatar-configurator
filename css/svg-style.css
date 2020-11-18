@@ -9,11 +9,6 @@
     display: initial;
 }
 
-.not-yet {
-    display: none;
-}
-
-
 /* *****************************************************
 
 /***
@@ -29,8 +24,6 @@
 
 .skin-tone {
     fill: #ffdecc;
-    /* normal light tone */
-    /* everybody */
 }
 
 .skin-shadow {
@@ -39,8 +32,6 @@
 
 g[data-skin='mid'] .skin-tone {
     fill: #f0b98b;
-    /* middle tone */
-    /* girl 12 */
 }
 
 g[data-skin='mid'] .skin-shadow {
@@ -49,8 +40,6 @@ g[data-skin='mid'] .skin-shadow {
 
 g[data-skin='dark'] .skin-tone {
     fill: #e6a875;
-    /* dark tone */
-    /* boy 10, girl 2 */
 }
 
 g[data-skin='dark'] .skin-shadow {
@@ -60,6 +49,8 @@ g[data-skin='dark'] .skin-shadow {
 /* ******************************* */
 /* *********  Lip Colors ********* */
 /* ******************************* */
+
+/* Mouth boys */
 
 .mouth-color {
     fill: #f7c5aa;
@@ -72,11 +63,11 @@ g[data-skin='dark'] .skin-shadow {
 .teeth {
     fill: #fff;
 }
-/* Lips */
+
+/* Lips girls */
 
 .lip-color {
     fill: #ff386a;
-    /* pink */
 }
 
 .lip-shadow {
@@ -93,123 +84,107 @@ g[data-skin='dark'] .skin-shadow {
 
 .hair-color {
     fill: #802d04;
-    /* default: brown */
 }
 
 g[data-hair='red'] .hair-color {
     fill: #bd1f0a;
-    /* red */
 }
 
 g[data-hair='ginger'] .hair-color {
     fill: #ff690f;
-    /* orange */
 }
 
 g[data-hair='blonde'] .hair-color {
     fill: #ffc65d;
-    /* blonde */
 }
 
 g[data-hair='lightbrown'] .hair-color {
     fill: #cc7c54;
-    /* light brown */
 }
 
 g[data-hair='brown'] .hair-color {
     fill: #802d04;
-    /* brown */
 }
 
 g[data-hair='darkbrown'] .hair-color {
     fill: #4d1b02;
-    /* dark brown */
 }
 
 /* ********************************* */
 /* ***** Shirt and Dress Colors **** */
 /* ********************************* */
 
-/* default girl */
-
-.dress-color {
-    /* Green. Default. Originally girls: 1, 5, 7, 8 */
-    fill: #68c497;
-}
-
-/* default boy */
+/* default colors */
 
 .shirt-color {
-    /* Deepblue. Default. Originally boys: 5, 6, 11 */
-    fill: #497194;
+    /* 3 */
+    fill: #b34d1f;
+}
+.shirt-shadow{
+    fill: #7a2c07;
+}
+.shirt-deko {
+    fill: #913e17;
 }
 
 /* --------------------------------------------------- */
 /* Green */
 
-g[data-dress='green'] .dress-color,
 g[data-shirt='green'] .shirt-color {
-    /* boy: 10 */
-    /* girls: 1, 5, 7, 8 */
     fill: #68c497;
 }
 
-g[data-dress='green'] .dress-shadow,
-g[data-shirt='green'] .shirt-shadow,
-g[data-shirt='green'] .shirt-deko {
+g[data-shirt='green'] .shirt-shadow {
     fill: #3c8a64;
-    /* dark green */
 }
 
-/* TODO: .dress-light szin minden szinhez */
-g[data-dress='green'] .dress-deko {
-    fill: #9ce8c3;
-    /* light green */
+g[data-shirt='green'] .shirt-deko {
+    fill: #77d1a5;
 }
 
 /* --------------------------------------------------- */
 /* Blue */
 
-g[data-dress='blue'] .dress-color,
 g[data-shirt='blue'] .shirt-color {
-    /* boy: 1 */
-    /* girl: 3 */
     fill: #86bceb;
 }
 
-g[data-dress='blue'] .dress-shadow,
-g[data-dress='blue'] .dress-deko,
-g[data-shirt='blue'] .shirt-shadow,
+
 g[data-shirt='blue'] .shirt-deko {
     fill: #b6dbfc;
+}
+g[data-shirt='blue'] .shirt-shadow {
+    fill: #497194;
 }
 
 /* --------------------------------------------------- */
 /* Deep blue */
 
 g[data-shirt='deepblue'] .shirt-color {
-    /* 5, 6, 11 */
     fill: #497194;
 }
 
 g[data-shirt='deepblue'] .shirt-shadow {
     fill: #304d66;
 }
+
 g[data-shirt='deepblue'] .shirt-deko {
     fill: #86bceb;
-    /* blue shirt-color and dress-color */
 }
 
 
 /* --------------------------------------------------- */
 /* Light blue */
 
+
 g[data-shirt='lightblue'] .shirt-color {
-    /* 12 */
     fill: #b6dbfc;
 }
 
-g[data-shirt='lightblue'] .shirt-shadow,
+g[data-shirt='lightblue'] .shirt-shadow {
+    fill: #304d66;
+}
+
 g[data-shirt='lightblue'] .shirt-deko {
     fill: #86bceb;
 }
@@ -217,55 +192,46 @@ g[data-shirt='lightblue'] .shirt-deko {
 /* --------------------------------------------------- */
 /* Pink */
 
-g[data-dress='pink'] .dress-color,
 g[data-shirt='pink'] .shirt-color {
-    /* girls:4, 6, 12, boys: 2,7 */
     fill: #ff386a;
 }
 
-g[data-dress='pink'] .dress-shadow,
-g[data-dress='pink'] .dress-deko,
-g[data-shirt='pink'] .shirt-shadow,
-g[data-shirt='pink'] .shirt-deko {
+g[data-shirt='pink'] .shirt-shadow {
     fill: #c21842;
-    /* dark pink */
 }
-/*
-g[data-shirt='pink'] .shirt-shadow{
-    fill: #ffa8be;
-} */
 
+g[data-shirt='pink'] .shirt-deko {
+    fill: #ffa8be;
+}
 
 /* --------------------------------------------------- */
 /* Light pink */
 
-g[data-dress='lightpink'] .dress-color {
-    /* Lighter pink. Originally girl: 9 */
+g[data-shirt='lightpink'] .shirt-color {
     fill: #ffa8be;
 }
-g[data-dress='lightpink'] .dress-shadow,
-g[data-dress='lightpink'] .dress-deko {
+
+g[data-shirt='lightpink'] .shirt-deko {
     fill: #ff386a;
-    /* lip/dress pink */
+}
+
+g[data-shirt='lightpink'] .shirt-shadow{
+    fill: #c21842;
 }
 
 /* --------------------------------------------------- */
 /* Yellow */
 
-g[data-dress='yellow'] .dress-color,
 g[data-shirt='yellow'] .shirt-color {
-    /* girl: 11 */
     fill: #ffd16e;
 }
 
-g[data-dress='yellow'] .dress-shadow,
-g[data-dress='yellow'] .dress-deko {
-    /* fill: #b5903f; */
-    fill: #b34d1f;
-    /* still not good enough */
+g[data-shirt='yellow'] .shirt-shadow {
+    /* fill: #8d5f0a; */
+    /* fill: #b34d1f; */
+    fill: #bb6736;
 }
 
-g[data-shirt='yellow'] .shirt-shadow,
 g[data-shirt='yellow'] .shirt-deko {
     fill: #ba8d3a;
 }
@@ -274,11 +240,13 @@ g[data-shirt='yellow'] .shirt-deko {
 /* Orange */
 
 g[data-shirt='orange'] .shirt-color {
-    /* 8 */
     fill: #ff690f;
 }
 
-g[data-shirt='orange'] .shirt-shadow
+g[data-shirt='orange'] .shirt-shadow{
+    fill: #853808;
+}
+
 g[data-shirt='orange'] .shirt-deko {
     fill: #ba4f0d;
 }
@@ -287,7 +255,6 @@ g[data-shirt='orange'] .shirt-deko {
 /* Darkred */
 
 g[data-shirt='darkred'] .shirt-color {
-    /* 9 */
     fill: #c76452;
 }
 
@@ -302,18 +269,15 @@ g[data-shirt='darkred'] .shirt-deko {
 /* --------------------------------------------------- */
 /* Dark Brown */
 
-g[data-dress='brown'] .dress-color {
-    /* Dark brown. Originally girl: 10 */
-    fill: #4d1b02;
-    /* same as dark-brow-hair */
-}
-
 g[data-shirt='brown'] .shirt-color {
-    /* 3 */
+    /* fill: #4d1b02; */
     fill: #b34d1f;
 }
 
-g[data-shirt='brown'] .shirt-shadow,
+g[data-shirt='brown'] .shirt-shadow{
+    fill: #7a2c07;
+}
+
 g[data-shirt='brown'] .shirt-deko {
     fill: #913e17;
 }
@@ -340,44 +304,35 @@ g[data-shirt='brown'] .shirt-deko {
 }
 
 .white-shirt {
-    /* 5, 10 */
+
     fill: #fff;
 }
 
 .collar {
-    /* 4, 8, 11 */
     fill: #fff;
 }
 
 .tie {
-    /* default */
     fill: #9d3421;
 }
 
 g[data-shirt='lightblue'] .tie {
-    /* 12 */
     fill: #fff;
 }
 
 g[data-shirt='yellow'] .tie {
-    /* 4 */
     fill: #ff386a;
-    /* lightpink */
 }
 g[data-shirt='pink'] .tie {
-    /*  */
     fill: #fff;
 }
 
 g[data-shirt='deepblue'] .tie {
-    /* 11 */
     fill: #9d3421;
 }
 
 .marks {
-    /* 7 */
     fill: #fff;
-    /* white */
 }
 
 /* --------------------------------------------------- */
@@ -386,6 +341,7 @@ g[data-shirt='deepblue'] .tie {
 .glasses-boy {
     fill: #27557d;
 }
+
 .glasses-girl {
     fill: #ff690f;
 }

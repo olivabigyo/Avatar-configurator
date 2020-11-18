@@ -11,9 +11,7 @@ const mouthSelect = document.getElementById("mouth-select");
 const hairSelect = document.getElementById("hair-select");
 const hairColorSelect = document.getElementById("hair-color-select");
 const shirtSelect = document.getElementById("shirt-select");
-const dressSelect = document.getElementById("dress-select");
 const shirtColorSelect = document.getElementById("shirt-color-select");
-const dressColorSelect = document.getElementById("dress-color-select");
 const accessoriesSelect = document.getElementById("accessories-select");
 
 // Event listeners for form inputs
@@ -115,37 +113,6 @@ shirtColorSelect.addEventListener("wheel", function (ev) {
     }
     selectColor("shirt", this.value);
 });
-dressSelect.addEventListener("change", function (ev) {
-    selectPart("dress", this.selectedIndex);
-});
-dressSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectPart("dress", this.selectedIndex);
-});
-
-dressColorSelect.addEventListener("change", function (ev) {
-    selectColor("dress", this.value);
-});
-dressColorSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectColor("dress", this.value);
-});
 
 accessoriesSelect.addEventListener("change", function (ev) {
     selectPart("Accessory", this.value);
@@ -181,7 +148,7 @@ const selectPart = (part, id) => {
     $(girl).find(part_id).addClass("active");
 }
 
-// Skin-color, Hair-color and Dress-color selection with data-attributum
+// Skin-color, Hair-color and Shirt/Dress-color selection with data-attributum
 const selectColor = (part, id) => {
     boy.setAttribute(`data-${part}`, id);
     girl.setAttribute(`data-${part}`, id);
