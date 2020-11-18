@@ -5,163 +5,38 @@ const girl = document.getElementById("Girl");
 const boyConfig = {};
 const girlConfig = {};
 
+const makeSelectHandler = (elementId, handler) => {
+    const element = document.getElementById(elementId);
+    // change the selection with mouseclick or keyboard etc.
+    element.addEventListener("change", () => {
+        handler(element);
+    });
+    // change the selection by scrolling with the mouse wheel over the selection input field
+    element.addEventListener("wheel", (ev) => {
+        ev.preventDefault();
+        if (ev.deltaY < 0) {
+            if (element.selectedIndex <= 0) return;
+            element.selectedIndex -= 1;
+        }
+        if (ev.deltaY > 0) {
+            if (element.selectedIndex >= element.length - 1) return;
+            element.selectedIndex += 1;
+        }
+        handler(element);
+    }, { passive: false });
+    return element;
+};
+
 // Variables for form inputs
-const skinSelect = document.getElementById("skin-tone-select");
-const mouthSelect = document.getElementById("mouth-select");
-const hairSelect = document.getElementById("hair-select");
-const hairColorSelect = document.getElementById("hair-color-select");
-const shirtSelect = document.getElementById("shirt-select");
-const dressSelect = document.getElementById("dress-select");
-const shirtColorSelect = document.getElementById("shirt-color-select");
-const dressColorSelect = document.getElementById("dress-color-select");
-const accessoriesSelect = document.getElementById("accessories-select");
-
-// Event listeners for form inputs
-
-// change the selection with mouseclick or keyboard etc.
-skinSelect.addEventListener("change", function (ev) {
-    selectColor("skin", this.value);
-});
-// change the selection by scrolling with the mouse wheel over the selection input field
-skinSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectColor("skin", this.value);
-});
-
-mouthSelect.addEventListener("change", function (ev) {
-    selectPart("mouth", parseInt(this.value));
-});
-mouthSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectPart("mouth", parseInt(this.value));
-});
-
-hairSelect.addEventListener("change", function (ev) {
-    selectPart("hair", this.selectedIndex);
-});
-hairSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectPart("hair", this.selectedIndex);
-});
-
-hairColorSelect.addEventListener("change", function (ev) {
-    selectColor("hair", this.value);
-});
-hairColorSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectColor("hair", this.value);
-});
-
-shirtSelect.addEventListener("change", function (ev) {
-    selectPart("shirt", this.selectedIndex);
-});
-shirtSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectPart("shirt", this.selectedIndex);
-});
-
-shirtColorSelect.addEventListener("change", function (ev) {
-    selectColor("shirt", this.value);
-});
-shirtColorSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectColor("shirt", this.value);
-});
-dressSelect.addEventListener("change", function (ev) {
-    selectPart("dress", this.selectedIndex);
-});
-dressSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectPart("dress", this.selectedIndex);
-});
-
-dressColorSelect.addEventListener("change", function (ev) {
-    selectColor("dress", this.value);
-});
-dressColorSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectColor("dress", this.value);
-});
-
-accessoriesSelect.addEventListener("change", function (ev) {
-    selectPart("Accessory", this.value);
-});
-accessoriesSelect.addEventListener("wheel", function (ev) {
-    ev.preventDefault();
-    if (ev.deltaY < 0) {
-        if (this.selectedIndex <= 0) return;
-        this.selectedIndex -= 1;
-    }
-    if (ev.deltaY > 0) {
-        if (this.selectedIndex >= this.length - 1) return;
-        this.selectedIndex += 1;
-    }
-    selectPart("Accessory", this.value);
-});
+const skinSelect = makeSelectHandler("skin-tone-select", (element) => selectColor("skin", element.value));
+const mouthSelect = makeSelectHandler("mouth-select", (element) => selectPart("mouth", parseInt(element.value)));
+const hairSelect = makeSelectHandler("hair-select", (element) => selectPart("hair", element.selectedIndex));
+const hairColorSelect = makeSelectHandler("hair-color-select", (element) => selectColor("hair", element.value));
+const shirtSelect = makeSelectHandler("shirt-select", (element) => selectPart("shirt", element.selectedIndex));
+const dressSelect = makeSelectHandler("dress-select", (element) => selectPart("dress", element.selectedIndex));
+const shirtColorSelect = makeSelectHandler("shirt-color-select", (element) => selectColor("shirt", element.value));
+const dressColorSelect = makeSelectHandler("dress-color-select", (element) => selectColor("dress", element.value));
+const accessoriesSelect = makeSelectHandler("accessories-select", (element) => selectPart("Accessory", element.value));
 
 // Functions
 
