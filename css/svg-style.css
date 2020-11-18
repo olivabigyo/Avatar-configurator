@@ -18,11 +18,14 @@
 
 /***
  * SVG style
- * This belongs inside the girl SVG and was only moved here for ease of handling.
+ * This belongs inside the boy/girl SVG and was only moved here for ease of handling.
  * (VS Code doesn't properly recognize style tags within the SVGs and don't switch to CSS mode in them.)
  */
 
-/* Skin */
+
+/* ******************************* */
+/* *********  Skin Tones ********* */
+/* ******************************* */
 
 .skin-tone {
     fill: #ffdecc;
@@ -32,16 +35,6 @@
 
 .skin-shadow {
     fill: #f7c5aa;
-}
-
-g[data-skin='dark'] .skin-tone {
-    fill: #e6a875;
-    /* dark tone */
-    /* girl 2 */
-}
-
-g[data-skin='dark'] .skin-shadow {
-    fill: #b88053;
 }
 
 g[data-skin='mid'] .skin-tone {
@@ -54,33 +47,31 @@ g[data-skin='mid'] .skin-shadow {
     fill: #cc9568;
 }
 
-/* Hair Colors */
-
-.hair-color {
-    fill: #a2400f;
-    /* brown */
+g[data-skin='dark'] .skin-tone {
+    fill: #e6a875;
+    /* dark tone */
+    /* boy 10, girl 2 */
 }
 
-g[data-hair='darkbrown'] .hair-color {
-    fill: #4d1b02;
-    /* black/dark brown */
+g[data-skin='dark'] .skin-shadow {
+    fill: #b88053;
 }
 
-g[data-hair='ginger'] .hair-color {
-    fill: #ff690f;
-    /* red/orange */
+/* ******************************* */
+/* *********  Lip Colors ********* */
+/* ******************************* */
+
+.mouth-color {
+    fill: #f7c5aa;
 }
 
-g[data-hair='lightbrown'] .hair-color {
-    fill: #cc7c54;
-    /* light brown */
+.mouth-color-dark {
+    fill: #b88053;
 }
 
-g[data-hair='blonde'] .hair-color {
-    fill: #ffc65d;
-    /* blonde */
+.teeth {
+    fill: #fff;
 }
-
 /* Lips */
 
 .lip-color {
@@ -96,57 +87,76 @@ g[data-hair='blonde'] .hair-color {
     fill: #fff;
 }
 
-/* Dress colors */
+/* ******************************* */
+/* ********* Hair Colors ********* */
+/* ******************************* */
+
+.hair-color {
+    fill: #802d04;
+    /* default: brown */
+}
+
+g[data-hair='red'] .hair-color {
+    fill: #bd1f0a;
+    /* red */
+}
+
+g[data-hair='ginger'] .hair-color {
+    fill: #ff690f;
+    /* orange */
+}
+
+g[data-hair='blonde'] .hair-color {
+    fill: #ffc65d;
+    /* blonde */
+}
+
+g[data-hair='lightbrown'] .hair-color {
+    fill: #cc7c54;
+    /* light brown */
+}
+
+g[data-hair='brown'] .hair-color {
+    fill: #802d04;
+    /* brown */
+}
+
+g[data-hair='darkbrown'] .hair-color {
+    fill: #4d1b02;
+    /* dark brown */
+}
+
+/* ********************************* */
+/* ***** Shirt and Dress Colors **** */
+/* ********************************* */
+
+/* default girl */
 
 .dress-color {
     /* Green. Default. Originally girls: 1, 5, 7, 8 */
     fill: #68c497;
 }
 
-g[data-dress='blue'] .dress-color {
-    /* Blue. Originally girl: 3 */
-    fill: #86bceb;
+/* default boy */
+
+.shirt-color {
+    /* Deepblue. Default. Originally boys: 5, 6, 11 */
+    fill: #497194;
 }
 
-g[data-dress='pink'] .dress-color {
-    /* Pink. Originally girls: 4, 6, 12 */
-    fill: #ff386a;
-    /* it is lip-color-1 */
+/* --------------------------------------------------- */
+/* Green */
+
+g[data-dress='green'] .dress-color,
+g[data-shirt='green'] .shirt-color {
+    /* boy: 10 */
+    /* girls: 1, 5, 7, 8 */
+    fill: #68c497;
 }
 
-g[data-dress='lightpink'] .dress-color {
-    /* Lighter pink. Originally girl: 9 */
-    fill: #ffa8be;
-}
-
-g[data-dress='brown'] .dress-color {
-    /* Dark brown. Originally girl: 10 */
-    fill: #4d1b02;
-    /* same as dark-brow-hair */
-}
-
-g[data-dress='yellow'] .dress-color {
-    /* Yellow. Originally girl: 11 */
-    fill: #ffd16e;
-}
-
-g[data-dress='yellow'] .dress-shadow {
-    /* fill: #b5903f; */
-    fill: #b34d1f;
-    /* still not good enough */
-}
-
-g[data-dress='lightpink'] .dress-shadow {
-    fill: #ff386a;
-    /* lip/dress pink */
-}
-
-g[data-dress='pink'] .dress-shadow{
-    fill: #c21842;
-    /* dark pink */
-}
-
-g[data-dress='green'] .dress-shadow {
+g[data-dress='green'] .dress-shadow,
+g[data-shirt='green'] .shirt-shadow,
+g[data-shirt='green'] .shirt-deko {
     fill: #3c8a64;
     /* dark green */
 }
@@ -157,7 +167,162 @@ g[data-dress='green'] .dress-deko {
     /* light green */
 }
 
-.dress-deko-5 {
+/* --------------------------------------------------- */
+/* Blue */
+
+g[data-dress='blue'] .dress-color,
+g[data-shirt='blue'] .shirt-color {
+    /* boy: 1 */
+    /* girl: 3 */
+    fill: #86bceb;
+}
+
+g[data-dress='blue'] .dress-shadow,
+g[data-dress='blue'] .dress-deko,
+g[data-shirt='blue'] .shirt-shadow,
+g[data-shirt='blue'] .shirt-deko {
+    fill: #b6dbfc;
+}
+
+/* --------------------------------------------------- */
+/* Deep blue */
+
+g[data-shirt='deepblue'] .shirt-color {
+    /* 5, 6, 11 */
+    fill: #497194;
+}
+
+g[data-shirt='deepblue'] .shirt-shadow {
+    fill: #304d66;
+}
+g[data-shirt='deepblue'] .shirt-deko {
+    fill: #86bceb;
+    /* blue shirt-color and dress-color */
+}
+
+
+/* --------------------------------------------------- */
+/* Light blue */
+
+g[data-shirt='lightblue'] .shirt-color {
+    /* 12 */
+    fill: #b6dbfc;
+}
+
+g[data-shirt='lightblue'] .shirt-shadow,
+g[data-shirt='lightblue'] .shirt-deko {
+    fill: #86bceb;
+}
+
+/* --------------------------------------------------- */
+/* Pink */
+
+g[data-dress='pink'] .dress-color,
+g[data-shirt='pink'] .shirt-color {
+    /* girls:4, 6, 12, boys: 2,7 */
+    fill: #ff386a;
+}
+
+g[data-dress='pink'] .dress-shadow,
+g[data-dress='pink'] .dress-deko,
+g[data-shirt='pink'] .shirt-shadow,
+g[data-shirt='pink'] .shirt-deko {
+    fill: #c21842;
+    /* dark pink */
+}
+/*
+g[data-shirt='pink'] .shirt-shadow{
+    fill: #ffa8be;
+} */
+
+
+/* --------------------------------------------------- */
+/* Light pink */
+
+g[data-dress='lightpink'] .dress-color {
+    /* Lighter pink. Originally girl: 9 */
+    fill: #ffa8be;
+}
+g[data-dress='lightpink'] .dress-shadow,
+g[data-dress='lightpink'] .dress-deko {
+    fill: #ff386a;
+    /* lip/dress pink */
+}
+
+/* --------------------------------------------------- */
+/* Yellow */
+
+g[data-dress='yellow'] .dress-color,
+g[data-shirt='yellow'] .shirt-color {
+    /* girl: 11 */
+    fill: #ffd16e;
+}
+
+g[data-dress='yellow'] .dress-shadow,
+g[data-dress='yellow'] .dress-deko {
+    /* fill: #b5903f; */
+    fill: #b34d1f;
+    /* still not good enough */
+}
+
+g[data-shirt='yellow'] .shirt-shadow,
+g[data-shirt='yellow'] .shirt-deko {
+    fill: #ba8d3a;
+}
+
+/* --------------------------------------------------- */
+/* Orange */
+
+g[data-shirt='orange'] .shirt-color {
+    /* 8 */
+    fill: #ff690f;
+}
+
+g[data-shirt='orange'] .shirt-shadow
+g[data-shirt='orange'] .shirt-deko {
+    fill: #ba4f0d;
+}
+
+/* --------------------------------------------------- */
+/* Darkred */
+
+g[data-shirt='darkred'] .shirt-color {
+    /* 9 */
+    fill: #c76452;
+}
+
+g[data-shirt='darkred'] .shirt-shadow {
+    fill: #9d3421;
+}
+
+g[data-shirt='darkred'] .shirt-deko {
+    fill: #c34a34;
+}
+
+/* --------------------------------------------------- */
+/* Dark Brown */
+
+g[data-dress='brown'] .dress-color {
+    /* Dark brown. Originally girl: 10 */
+    fill: #4d1b02;
+    /* same as dark-brow-hair */
+}
+
+g[data-shirt='brown'] .shirt-color {
+    /* 3 */
+    fill: #b34d1f;
+}
+
+g[data-shirt='brown'] .shirt-shadow,
+g[data-shirt='brown'] .shirt-deko {
+    fill: #913e17;
+}
+
+
+/* --------------------------------------------------- */
+/* OTHER DEKOS */
+
+.hem {
     fill: none;
     stroke: #fff;
     stroke-miterlimit: 22.93;
@@ -165,25 +330,82 @@ g[data-dress='green'] .dress-deko {
     stroke-dasharray: 2.4 3.6;
 }
 
-.polkadots {
+.polkadots, .lace {
     fill: #fff;
 }
 
-.dress-deko-12 {
+/* TODO */
+.offwhite-shirt {
+    fill: #e6e6e6;
+}
+
+.white-shirt {
+    /* 5, 10 */
     fill: #fff;
 }
 
-/* Accessoires */
+.collar {
+    /* 4, 8, 11 */
+    fill: #fff;
+}
 
-.glasses-color {
+.tie {
+    /* default */
+    fill: #9d3421;
+}
+
+g[data-shirt='lightblue'] .tie {
+    /* 12 */
+    fill: #fff;
+}
+
+g[data-shirt='yellow'] .tie {
+    /* 4 */
+    fill: #ff386a;
+    /* lightpink */
+}
+g[data-shirt='pink'] .tie {
+    /*  */
+    fill: #fff;
+}
+
+g[data-shirt='deepblue'] .tie {
+    /* 11 */
+    fill: #9d3421;
+}
+
+.marks {
+    /* 7 */
+    fill: #fff;
+    /* white */
+}
+
+/* --------------------------------------------------- */
+/* Accessories */
+
+.glasses-boy {
+    fill: #27557d;
+}
+.glasses-girl {
     fill: #ff690f;
 }
 
-/* TODO: fitting to the dress-color? */
 .jewelry-hair {
     fill: #86bceb;
 }
 
 .pearls {
     fill: #fff;
+}
+
+.hat-light {
+    fill: #b6dbfc;
+}
+
+.hat-scarf-color {
+    fill: #86bceb;
+}
+
+.scarf-shadow {
+    fill: #345e82;
 }

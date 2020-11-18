@@ -1,6 +1,8 @@
 
 // Variables
+const boy = document.getElementById("Boy");
 const girl = document.getElementById("Girl");
+const boyConfig = {};
 const girlConfig = {};
 
 // Variables for form inputs
@@ -8,7 +10,9 @@ const skinSelect = document.getElementById("skin-tone-select");
 const mouthSelect = document.getElementById("mouth-select");
 const hairSelect = document.getElementById("hair-select");
 const hairColorSelect = document.getElementById("hair-color-select");
+const shirtSelect = document.getElementById("shirt-select");
 const dressSelect = document.getElementById("dress-select");
+const shirtColorSelect = document.getElementById("shirt-color-select");
 const dressColorSelect = document.getElementById("dress-color-select");
 const accessoriesSelect = document.getElementById("accessories-select");
 
@@ -33,7 +37,7 @@ skinSelect.addEventListener("wheel", function (ev) {
 });
 
 mouthSelect.addEventListener("change", function (ev) {
-    selectPart("Mouth", parseInt(this.value));
+    selectPart("mouth", parseInt(this.value));
 });
 mouthSelect.addEventListener("wheel", function (ev) {
     ev.preventDefault();
@@ -45,11 +49,11 @@ mouthSelect.addEventListener("wheel", function (ev) {
         if (this.selectedIndex >= this.length - 1) return;
         this.selectedIndex += 1;
     }
-    selectPart("Mouth", parseInt(this.value));
+    selectPart("mouth", parseInt(this.value));
 });
 
 hairSelect.addEventListener("change", function (ev) {
-    selectPart("Hair", this.selectedIndex);
+    selectPart("hair", this.selectedIndex);
 });
 hairSelect.addEventListener("wheel", function (ev) {
     ev.preventDefault();
@@ -61,7 +65,7 @@ hairSelect.addEventListener("wheel", function (ev) {
         if (this.selectedIndex >= this.length - 1) return;
         this.selectedIndex += 1;
     }
-    selectPart("Hair", this.selectedIndex);
+    selectPart("hair", this.selectedIndex);
 });
 
 hairColorSelect.addEventListener("change", function (ev) {
@@ -80,8 +84,39 @@ hairColorSelect.addEventListener("wheel", function (ev) {
     selectColor("hair", this.value);
 });
 
+shirtSelect.addEventListener("change", function (ev) {
+    selectPart("shirt", this.selectedIndex);
+});
+shirtSelect.addEventListener("wheel", function (ev) {
+    ev.preventDefault();
+    if (ev.deltaY < 0) {
+        if (this.selectedIndex <= 0) return;
+        this.selectedIndex -= 1;
+    }
+    if (ev.deltaY > 0) {
+        if (this.selectedIndex >= this.length - 1) return;
+        this.selectedIndex += 1;
+    }
+    selectPart("shirt", this.selectedIndex);
+});
+
+shirtColorSelect.addEventListener("change", function (ev) {
+    selectColor("shirt", this.value);
+});
+shirtColorSelect.addEventListener("wheel", function (ev) {
+    ev.preventDefault();
+    if (ev.deltaY < 0) {
+        if (this.selectedIndex <= 0) return;
+        this.selectedIndex -= 1;
+    }
+    if (ev.deltaY > 0) {
+        if (this.selectedIndex >= this.length - 1) return;
+        this.selectedIndex += 1;
+    }
+    selectColor("shirt", this.value);
+});
 dressSelect.addEventListener("change", function (ev) {
-    selectPart("Dress", this.selectedIndex);
+    selectPart("dress", this.selectedIndex);
 });
 dressSelect.addEventListener("wheel", function (ev) {
     ev.preventDefault();
@@ -93,7 +128,7 @@ dressSelect.addEventListener("wheel", function (ev) {
         if (this.selectedIndex >= this.length - 1) return;
         this.selectedIndex += 1;
     }
-    selectPart("Dress", this.selectedIndex);
+    selectPart("dress", this.selectedIndex);
 });
 
 dressColorSelect.addEventListener("change", function (ev) {
@@ -132,18 +167,22 @@ accessoriesSelect.addEventListener("wheel", function (ev) {
 
 // Hair, Mouth and Accessories selection with active class
 const selectPart = (part, id) => {
-    if (part === "Hair") {
-        selectPart("Hair-front", id);
-        selectPart("Hair-back", id);
+    if (part === "hair") {
+        selectPart("hair-front", id);
+        selectPart("hair-back", id);
         return;
     }
 
-    $(girl).find(`#${part} .selectable`).removeClass("active");
-    const part_id = typeof (id) === "number" ? `#${part}-${id}` : `#${id}`;
+    $(boy).find(`.${part} .selectable`).removeClass("active");
+    $(girl).find(`.${part} .selectable`).removeClass("active");
+
+    const part_id = typeof (id) === "number" ? `.${part}-${id}` : `.${id}`;
+    $(boy).find(part_id).addClass("active");
     $(girl).find(part_id).addClass("active");
 }
 
 // Skin-color, Hair-color and Dress-color selection with data-attributum
 const selectColor = (part, id) => {
+    boy.setAttribute(`data-${part}`, id);
     girl.setAttribute(`data-${part}`, id);
 };
